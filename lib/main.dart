@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 const d_green=Color(0xFF54D3C2);
@@ -23,12 +25,15 @@ class HomePage extends StatelessWidget{
   {
     return Scaffold(
       appBar: MyAppBar(),
-      body: Container(
-      )
+      body: SingleChildScrollView(
+        child: Column(children: [SearchSection(),Container(height: 1500, color: Colors.red)],) 
+      ,)
 
     );
   }
 }
+
+
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
   
   Size get preferredSize => new Size.fromHeight(50);
@@ -64,6 +69,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
     );
   } 
 
+}
 
-
+class SearchSection extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return Container(height: 300,
+      color: Colors.grey[200]);
+  }
+ 
 }
