@@ -78,7 +78,7 @@ class SearchSection extends StatelessWidget{
   @override
   Widget build(BuildContext context)
   {
-    return Container(height: 200,
+    return Container(
       color: Colors.grey[200],
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: Column(children: [
@@ -95,7 +95,7 @@ class SearchSection extends StatelessWidget{
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.shade600,
+                color: Colors.grey.shade300,
                 blurRadius: 4,
                 offset: Offset(0,3)
 
@@ -119,13 +119,12 @@ class SearchSection extends StatelessWidget{
          height: 50, 
          width : 50,
          decoration: BoxDecoration(
-            color: Colors.green,
             borderRadius: BorderRadius.all(
               Radius.circular(25)
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey,
+                color: Colors.grey.shade300,
                 blurRadius: 4,
                 offset: Offset(0,4)
 
@@ -150,10 +149,43 @@ class SearchSection extends StatelessWidget{
         
          
        ]),
-       SizedBox(height: 50),
+      
 
         
-        Container(height: 50, color: Colors.black)
+       Row(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+          Container(
+            margin: EdgeInsets.all(10),
+            child: 
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Text("Choose date",  style: GoogleFonts.nunito( 
+                                        color: Colors.grey,
+                                        fontSize: 15)),
+                SizedBox(height: 8),
+              Text("12 Dec - 22 Dec", style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                        fontSize: 17))],) 
+            ),
+            Container(
+            margin: EdgeInsets.all(10),
+            child: 
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Text("Number of Rooms",  style: GoogleFonts.nunito( 
+                                            color: Colors.grey ,
+                                            fontSize: 15) ),
+              SizedBox(height: 8),
+              Text("1 Room - 2 Adults", style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                        fontSize: 17))
+              ]) 
+            )
+
+       ],)
 
       ],));
 
