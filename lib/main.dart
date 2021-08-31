@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -259,10 +260,9 @@ class HotelSection extends StatelessWidget{
             
             
             ),
+          //Parcours de list
           Column(children: hotelList.map((hotel){
-            return Container(
-              child: Image.asset(hotel['picture'])
-            );
+            return HotelCard(hotel);
           
           }).toList()
           ),
@@ -276,4 +276,56 @@ class HotelSection extends StatelessWidget{
   }
  
 }
+class HotelCard extends StatelessWidget{
+  final Map hotelData;
+  HotelCard(this.hotelData); //Constructeur : c'est un champ obligatoire
+   @override
+   Widget build(BuildContext context){
+        return Container (
+          margin: EdgeInsets.all(10),
+          height: 230,
+          width: double.infinity,
+          decoration : BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+             boxShadow: [
+              BoxShadow(
+                color: Colors.grey.shade600,
+                blurRadius: 6,
+                offset: Offset(0,3)
 
+              ),
+            ],
+            
+
+
+          ),
+          child: Column(children: [
+            Container(
+
+              height: 140,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight:  Radius.circular(20),
+                ),
+                color: Colors.black,
+                image: DecorationImage(
+                  image: AssetImage(hotelData["picture"]),
+                  fit: BoxFit.cover  )
+
+              ),
+            )
+          ],)
+
+
+
+        );
+   }
+}
+
+
+
+ /*Container(
+              child: Image.asset(hotel['picture'])
+            );*/
