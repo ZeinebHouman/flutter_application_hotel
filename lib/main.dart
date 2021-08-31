@@ -197,7 +197,39 @@ class HotelSection extends StatelessWidget{
   Widget build(BuildContext context)
   {
     return Container(height: 2000,
-      color: Colors.white);
+    padding: EdgeInsets.all(10),
+      color: Colors.white,
+      child: Column(
+        children: [
+          Container(
+            height: 50,
+            child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text("550 hotels found",  style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                        fontSize: 15)),
+                          Row(children: [Text("Filters",  style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                        fontSize: 15)),
+                                         IconButton(
+                                        icon: Icon(Icons.filter_list_outlined, 
+                                                    color: d_green,
+                                                    size: 25 ),
+                                        onPressed: null)
+                                                                 ],)                                      ],
+                                        
+                                        
+                                        
+                        )
+            
+            
+            
+            ),
+           Container(color: Colors.blue, height: 1000)
+
+
+        ],)
+    );
   }
  
 }
