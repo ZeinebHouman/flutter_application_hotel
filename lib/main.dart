@@ -193,6 +193,40 @@ class SearchSection extends StatelessWidget{
  
 }
 class HotelSection extends StatelessWidget{
+ final List hotelList = [
+    {
+      'title': 'Grand Royl Hotel',
+      'place': 'wembley, London',
+      'distance': 2,
+      'review': 36,
+      'picture': 'images/hotel_1.jpg',
+      'price': '180',
+    },
+    {
+      'title': 'Queen Hotel',
+      'place': 'wembley, London',
+      'distance': 3,
+      'review': 13,
+      'picture': 'images/hotel_2.jpg',
+      'price': '220',
+    },
+    {
+      'title': 'Grand Mal Hotel',
+      'place': 'wembley, London',
+      'distance': 6,
+      'review': 88,
+      'picture': 'images/hotel_3.jpg',
+      'price': '400',
+    },
+    {
+      'title': 'Hilton',
+      'place': 'wembley, London',
+      'distance': 11,
+      'review': 34,
+      'picture': 'images/hotel_4.jpg',
+      'price': '910',
+    },
+  ];
   @override
   Widget build(BuildContext context)
   {
@@ -225,11 +259,20 @@ class HotelSection extends StatelessWidget{
             
             
             ),
-           Container(color: Colors.blue, height: 1000)
-
-
-        ],)
-    );
+          Column(children: hotelList.map((hotel){
+            return Container(
+              child: Image.asset(hotel['picture'])
+            );
+          
+          }).toList()
+          ),
+        ],
+          ),
+          
+        );
+        
+        
+    
   }
  
 }
