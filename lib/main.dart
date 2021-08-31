@@ -286,7 +286,7 @@ class HotelCard extends StatelessWidget{
           height: 230,
           width: double.infinity,
           decoration : BoxDecoration(
-            color: Colors.blue,
+            color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
              boxShadow: [
               BoxShadow(
@@ -315,7 +315,83 @@ class HotelCard extends StatelessWidget{
                   fit: BoxFit.cover  )
 
               ),
-            )
+              child: Stack(children: [
+                Positioned(top: 5,
+                 right:-15,
+                 child: 
+                 MaterialButton( 
+                   color: Colors.white,
+                   shape: CircleBorder(),
+                   onPressed: (){},
+                   child: Icon(Icons.favorite_outline_rounded, 
+                   color: d_green,
+                   size: 20 ) ))
+              ],)
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Text(hotelData['title'],style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w800,
+                                        fontSize: 18)),
+                Text('\$'+hotelData['price'],  style: GoogleFonts.nunito( 
+                                        color: Colors.black,
+                                          fontWeight: FontWeight.w800,
+                                        fontSize: 18)),
+
+              ],),
+              
+              ),
+              Container(margin: EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(hotelData['place'],style: GoogleFonts.nunito( 
+                                        color: Colors.grey[500],
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14)),
+                  Row(children: [
+                    Icon( Icons.place,
+                         color:d_green,
+                         size: 14.0, ),
+                          Text(hotelData['distance'].toString()+' km to city',style: GoogleFonts.nunito( 
+                                        color: Colors.grey[500],
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14))]),
+                   Text("per night",style: GoogleFonts.nunito( 
+                                        color: Colors.grey[500],
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14))
+                   
+
+              ],),
+              
+              
+              
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+                child: Row(children: [
+                   Row(children: [Icon(Icons.star_rate, color: d_green, size:14),
+                   Icon(Icons.star_rate, color: d_green, size:14),
+                   Icon(Icons.star_rate, color: d_green, size:14),
+                   Icon(Icons.star_rate, color: d_green, size:14),
+                   Icon(Icons.star_border, color: d_green, size:14)],),
+                   SizedBox(width: 20),
+                    Text(hotelData["review"].toString()+" reviews",style: GoogleFonts.nunito( 
+                                        color: Colors.grey[500],
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14)),
+                            
+
+                ],))
+
+
+
+
           ],)
 
 
