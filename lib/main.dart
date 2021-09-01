@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Calendar_page.dart';
 const d_green=Color(0xFF54D3C2);
 void main() {
   runApp(MyApp());
@@ -134,7 +135,9 @@ class SearchSection extends StatelessWidget{
 
          ),
          child: ElevatedButton(
-          onPressed: (){}, 
+          onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context){
+            return CalendarPage();
+          }));}, 
           child: Icon(Icons.search, size: 26),
           style: ElevatedButton.styleFrom(
             shape: CircleBorder(),
